@@ -3,8 +3,9 @@ var app = express()
 
 app.use(express.static('public'))
 
-var server = app.listen(3000, () => {
-  console.log('listening to port 3000')
+const PORT = process.env.PORT || 3000
+var server = app.listen(PORT, () => {
+  console.log(`listening to port ${PORT}`)
 })
 
 var io = require('socket.io').listen(server)
