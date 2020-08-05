@@ -1,4 +1,4 @@
-// let localVideo = document.getElementById('localVideo')
+let localVideo = document.getElementById('localVideo')
 let remoteVideo = document.getElementById('remoteVideo')
 let localStream
 let remoteUser
@@ -16,7 +16,9 @@ navigator.mediaDevices
     video: true,
   })
   .then(stream => {
-    // localVideo.srcObject = stream
+    localVideo.autoplay = true
+    localVideo.muted = true
+    localVideo.srcObject = stream
     localStream = stream
   })
 
